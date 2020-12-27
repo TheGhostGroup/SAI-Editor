@@ -376,7 +376,7 @@ namespace SAI_Editor.Classes.Database
             DataTable dt = await ExecuteQuery("SELECT spellname0 FROM spell WHERE id = '" + id + "'");
 
             if (dt.Rows.Count == 0)
-                return "Spell";
+                return "Spell" + " " + id;
 
             return (string)dt.Rows[0]["spellname0"]; //! Always take first index; should not be possible to have multiple instances per id, but still
         }
