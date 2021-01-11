@@ -532,8 +532,8 @@
             "ACTION_PLAY_SPELL_VISUAL_KIT",
             "ACTION_OVERRIDE_LIGHT",
             "ACTION_OVERRIDE_WEATHER",
-            "ACTION_UNUSED_140",
-            "ACTION_UNUSED_141",
+            "ACTION_SET_AI_ANIM_KIT",
+            "ACTION_SET_HOVER",
             "ACTION_UNUSED_142",
             "ACTION_UNUSED_143",
             "ACTION_UNUSED_144",
@@ -602,7 +602,7 @@
             "ACTION_CHECK_HOMEDIST_AND_EVADE",
             "ACTION_SET_SPEED_RATE",
             "ACTION_LOAD_WP_PATH",
-            "ACTION_SET_HOVER",
+            "ACTION_UNUSED_210",
             "ACTION_CAST_RANDOM_SPELL",
             "ACTION_COMBAT_STOP_WITH_PETS",
             "ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT",
@@ -637,7 +637,8 @@
             "ACTION_SET_UNIT_STATE",
             "ACTION_RESET_LOOT_MODE",
             "ACTION_SET_LOOT_MODE",
-            "ACTION_MOVE_SPAWN_POS"});
+            "ACTION_MOVE_SPAWN_POS",
+            "ACTION_SET_FLY_MODE"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
