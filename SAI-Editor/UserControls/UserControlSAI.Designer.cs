@@ -358,7 +358,17 @@
             "TARGET_LOOT_RECIPIENTS",
             "TARGET_FARTHEST",
             "TARGET_VEHICLE_PASSENGER",
-            "TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT"});
+            "TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT",
+            "TARGET_UNUSED_1",
+            "TARGET_UNUSED_2",
+            "TARGET_UNUSED_3",
+            "TARGET_UNUSED_4",
+            "TARGET_UNUSED_5",
+            "TARGET_UNUSED_6",
+            "TARGET_UNUSED_7",
+            "TARGET_UNUSED_8",
+            "TARGET_UNUSED_9",
+            "TARGET_SUMMON"});
             this.comboBoxTargetType.Location = new System.Drawing.Point(59, 72);
             this.comboBoxTargetType.Name = "comboBoxTargetType";
             this.comboBoxTargetType.Size = new System.Drawing.Size(235, 21);

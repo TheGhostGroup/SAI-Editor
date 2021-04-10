@@ -126,7 +126,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_, Path-ID: _actionParamFive_ (_RepeatPath_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_SINGLE_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on single target - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_ALL_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on all units in threatlist - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_AREAEXPLOREDOREVENTHAPPENS, "Call AreaExploredOrEventHappens for Quest: '_questNameActionParamOne_' - Target: _getTargetType_");
@@ -1552,6 +1552,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_AttackInvoker_", "");
                 }
 
+                if (fullLine.Contains("_RepeatPath_"))
+                {
+                    if (smartScript.action_param6 == 1)
+                        fullLine = fullLine.Replace("_RepeatPath_", "Repeat Path");
+                    else if (smartScript.action_param6 == 0)
+                        fullLine = fullLine.Replace("_RepeatPath_", "Path Once");
+                }
+
                 if (fullLine.Contains("_startOrStopBasedOnTargetType_"))
                 {
                     if (smartScript.target_type == 0)
@@ -1709,6 +1717,8 @@ namespace SAI_Editor.Classes
                     return "Vehicle Passenger";
                 case SmartTarget.SMART_TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT:
                     return "Closest Unspawned Gameobject '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
+                case SmartTarget.SMART_TARGET_SUMMON:
+                    return "Summon";
                 default:
                     return "<Please Insert Target Type>";
             }
